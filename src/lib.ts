@@ -2,7 +2,7 @@ import { SessionOptions } from "iron-session";
 
 export interface SessionData {
   userId?: string;
-  userName?: string;
+  username?: string;
   userEmail?: string;
   img?: string;
   isPro?: boolean;
