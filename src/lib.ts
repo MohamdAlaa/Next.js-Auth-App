@@ -6,7 +6,12 @@ export interface SessionData {
   userEmail?: string;
   img?: string;
   isPro?: boolean;
+  isLoggedIn: boolean;
 }
+
+export const defaultSession: SessionData = {
+  isLoggedIn: false,
+};
 
 export const sessionOptions: SessionOptions = {
   password: process.env.SESSION_SECRET_KEY || "default_secret_key",
