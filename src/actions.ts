@@ -9,7 +9,10 @@ let isPro = true;
 let isBlocked = true;
 
 export const getSession = async () => {
-  const session = await getIronSession<SessionData>(cookies(), sessionOptions);
+  const session = await getIronSession<SessionData>(
+    await cookies(),
+    sessionOptions
+  );
 
   if (!session.isLoggedIn) {
     session.isLoggedIn = defaultSession.isLoggedIn;
@@ -17,6 +20,8 @@ export const getSession = async () => {
 
   return session;
 };
+
+// LOGIN
 export const login = async (formData: FormData) => {
   const session = await getSession();
   const formUsername = formData.get("username");
@@ -26,6 +31,7 @@ export const login = async (formData: FormData) => {
   // const user = await db.getUser({username,password})
 
   if (formUsername !== username) {
+    console.log("Wrong Credentials!");
     return { error: "Wrong Credentials!" };
   }
 
@@ -37,6 +43,8 @@ export const login = async (formData: FormData) => {
   await session.save();
   redirect("/");
 };
+
+// LOGOUT
 export const logout = async () => {
   const session = await getSession();
   session.destroy();
