@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <div className="container">
           <Navbar />
-          <div className="contant">{children}</div>
+          <div className="">{children}</div>
         </div>
       </body>
     </html>
