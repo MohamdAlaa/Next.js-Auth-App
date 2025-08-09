@@ -19,6 +19,10 @@ p {
   color: lightgreen;
 }
 
+span {
+  color: #eee;
+  text-align: center;
+}
 .container {
   height: 100vh;
   margin: auto;
@@ -106,6 +110,13 @@ li {
 li:hover {
   scale: 1.02;
 }
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
 .profile p {
   margin-bottom: 20px;
@@ -114,6 +125,7 @@ li:hover {
 .profile form {
   margin: 20px 0px;
   display: flex;
+
   align-items: center;
   gap: 10px;
 }
