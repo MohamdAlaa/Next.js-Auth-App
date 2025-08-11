@@ -3,6 +3,7 @@ import { getIronSession } from "iron-session";
 import { defaultSession, SessionData, sessionOptions } from "./lib";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 let username = "mike";
 let isPro = true;
@@ -51,4 +52,23 @@ export const logout = async () => {
   const session = await getSession();
   session.destroy();
   redirect("/");
+};
+
+// TOGGLE PREMIUM
+export const ChangePremium = async () => {
+  const session = await getSession();
+  isPro = !session.isPro;
+  session.isPro = isPro;
+  await session.save();
+  revalidatePath("/premium");
+};
+
+// CHANGE USERNAME
+export const changeUsername = async (formData: FormData) => {
+  const session = await getSession();
+  const newUsername = formData.get("username") as string;
+  username = newUsername;
+  session.username = username;
+  await session.save();
+  revalidatePath("/profile");
 };
