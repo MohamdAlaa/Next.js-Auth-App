@@ -80,9 +80,13 @@ button:hover {
   gap: 20px;
   margin-bottom: 30px;
 }
-
-.notPremium h1 {
-  width: 500px;
+.premium,
+.notPremium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .notPremium a {
@@ -93,7 +97,7 @@ button:hover {
 }
 
 .notPremium a:hover {
-  font-weight: 400;
+  scale: 1.05;
 }
 
 ul {
