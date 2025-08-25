@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
+This project is a simple authentication demo built with Next.js 13+ (App Router), using [iron-session](https://github.com/vvo/iron-session) for stateless session management.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Login/Logout**: Simple login form with username and password.
+- **Session Management**: Uses `iron-session` to store session data securely in cookies.
+- **Premium Toggle**: Ability to toggle a "Pro" (premium) status for the user.
+- **Change Username**: Update the username in the session.
+- **Server Actions**: All authentication logic is handled using Next.js Server Actions.
+- **Client Components**: Includes a client-side login form using React.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/actions.ts`: Contains all server actions for authentication and session management.
+- `src/components/LoginForm.tsx`: Client component for the login form.
+- `app/page.tsx`: Main page, can be edited to customize the UI.
 
-## Learn More
+### Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Install dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Run the development server:**
+   (see below for commands)
 
-## Deploy on Vercel
+3. **Login Credentials:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - Default username: `mike`
+   - Default password: (any, since password is not checked in demo)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Changing Username or Premium Status:**
+   - Use the provided UI (if implemented) to change your username or toggle premium.
+
+### Notes
+
+- This project is for demonstration purposes and does not connect to a real database.
+- All user data is stored in memory and in the session cookie.
+- For production, you should implement proper password checks and persistent user storage.
+
+For more details, see the code in `src/actions.ts` and `src/components/LoginForm.tsx`.
