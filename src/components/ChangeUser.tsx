@@ -4,7 +4,7 @@ import React from "react";
 const ChangeUser = async () => {
   const session = await getSession();
   return (
-    <form action={changeUsername}>
+    <form className="changeuser" action={changeUsername}>
       <label htmlFor="username">Update UserName :</label>
       <input
         type="text"

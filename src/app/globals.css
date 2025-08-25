@@ -98,6 +98,7 @@ button:hover {
 
 .notPremium a:hover {
   scale: 1.05;
+  transition: all 0.5s ease;
 }
 
 ul {
@@ -126,10 +127,20 @@ li:hover {
   margin-bottom: 20px;
 }
 
-.profile form {
+.loginform {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginform button {
+  width: 100px;
+  height: 35px;
+}
+
+.loginform .profile form {
   margin: 20px 0px;
   display: flex;
-
   align-items: center;
   gap: 10px;
 }
@@ -139,6 +150,7 @@ input {
   border-radius: 3px;
   color: black;
   font-size: 20px;
+  width: 100%;
 }
 
 b {
@@ -154,4 +166,15 @@ b {
 .login p {
   color: coral;
   font-size: 18px;
+}
+.changeuser {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.changeuser button {
+  width: 150px;
+  height: 35px;
+  margin: auto;
 }
